@@ -1,7 +1,7 @@
 {
   "name": "grunt-requirejs-injector",
   "description": "Inject RequireJS dependencies on definition.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/cuarti/grunt-requirejs-injector",
   "author": {
     "name": "Albert Cuartiella",
