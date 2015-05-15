@@ -17,7 +17,9 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-requirejs-injector');
 ```
 
-## The "requirejs_injector" task
+## requirejs_injector task
+
+You can convert a RequireJS application to a single script, concatenate modules and inject his dependencies on definition. 
 
 ### Overview
 In your project's Gruntfile, add a section named `requirejs_injector` to the data object passed into `grunt.initConfig()`.
@@ -25,59 +27,26 @@ In your project's Gruntfile, add a section named `requirejs_injector` to the dat
 ```js
 grunt.initConfig({
   requirejs_injector: {
-    options: {
-      // Task-specific options go here.
-    },
     your_target: {
-      // Target-specific file lists and/or options go here.
+      src: src_target,
+      dest: dest_target
     },
   },
 });
 ```
-
-### Options
-
-#### options.separator
-Type: `String`
-Default value: `',  '`
-
-A string value that is used to do something with whatever.
-
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
-
-A string value that is used to do something else with whatever else.
 
 ### Usage Examples
 
-#### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+#### Simple Example
+In this example, compile `test/fixtures/print/main.js` to `tmp/print.js`.
 
 ```js
 grunt.initConfig({
   requirejs_injector: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  requirejs_injector: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+    print: {
+      src: 'test/fixtures/print/main.js',
+      dest: 'tmp/print.js'
+    }
   },
 });
 ```
