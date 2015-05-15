@@ -92,9 +92,11 @@ module.exports = function(grunt) {
         var match = DEFINE_REGEX.exec(content);
         if(match) {
 
+            name = name.replace('/', '_');
+
             var define = match[0];
             var args = define.substring(define.indexOf('[') + 1);
-            args = args.substring(0, args.indexOf(']')).replace(COMMA_REGEX, '');
+            args = args.substring(0, args.indexOf(']')).replace(COMMA_REGEX, '').replace('/', '_');
 
             content = 'var ' + name + ' = (' + content.substring(define.length).replace(END_REGEX, '})(' + args + ');');
         }
