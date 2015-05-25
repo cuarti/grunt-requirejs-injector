@@ -39,9 +39,6 @@
     "grunt": "~0.4.5"
   },
   "keywords": [
-    "gruntplugin",
-    "requirejs",
-    "concat",
-    "inject"
+    "gruntplugin"
   ]
 }

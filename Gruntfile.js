@@ -34,6 +34,14 @@ module.exports = function(grunt) {
             print: {
                 src: 'test/fixtures/print/main.js',
                 dest: 'tmp/print.js'
+            },
+            assert: {
+                src: 'test/fixtures/assert/main.js',
+                dest: 'tmp/assert.js'
+            },
+            foo: {
+                src: 'test/fixtures/foo/main.js',
+                dest: 'tmp/foo.js'
             }
         },
 
@@ -58,5 +66,7 @@ module.exports = function(grunt) {
 
     // By default, lint and run all tests.
     grunt.registerTask('default', ['jshint', 'test']);
+
+    grunt.registerTask('development', ['requirejs_injector:foo']);
 
 };
